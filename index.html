@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Domine o violão com nossos eBooks exclusivos. Um método passo a passo para todos os níveis. Aprenda de forma rápida e prática.">
+    <title>Aprenda Violão - Iniciantes, Pestanas e Teoria Musical</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://yourimageurl.com/guitar-bg.jpg') center/cover no-repeat;
+            color: white;
+            padding: 5rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        header p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .cta-button {
+            padding: 1.2rem 3rem;
+            background-color: #f8843c;
+            color: white;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .cta-button:hover {
+            background-color: #e46d28;
+            transform: scale(1.05);
+        }
+        .main-content {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: #333;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: #f8843c;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .mission-section {
+            text-align: center;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            margin-bottom: 3rem;
+        }
+        .mission-section p {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            color: #555;
+        }
+        .video-section {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .video-section iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .benefits {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .benefit {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            transition: transform 0.3s ease;
+        }
+        .benefit:hover {
+            transform: translateY(-10px);
+        }
+        .benefit h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #f8843c;
+        }
+        .benefit p {
+            font-size: 1rem;
+            color: #666;
+        }
+        .course-section {
+            padding: 3rem 0;
+        }
+        .course-grid {
+            display: flex;
+            gap: 2rem;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .course-item {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            flex: 1 1 30%;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .course-item:hover {
+            transform: translateY(-10px);
+        }
+        .course-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #f8843c;
+        }
+        .course-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+        .course-item img {
+            max-width: 100%;
+            margin-bottom: 1rem;
+        }
+        .features {
+            background-color: #f8843c;
+            padding: 3rem 1rem;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 30px;
+        }
+        .features li:before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2rem;
+            color: white;
+        }
+        .pricing-section {
+            background-color: #f9f9f9;
+            padding: 3rem 1rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        .pricing-table {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .pricing-option {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            flex: 1;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        .pricing-option:hover {
+            transform: translateY(-10px);
+        }
+        .pricing-option h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #f8843c;
+        }
+        .pricing-option p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .pricing-option .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .pricing-option button {
+            padding: 1rem 2rem;
+            background-color: #f8843c;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .pricing-option button:hover {
+            background-color: #e46d28;
+        }
+        .testimonials {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .testimonial {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            flex: 1;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial img {
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+        .testimonial p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+        .testimonial h4 {
+            font-size: 1.2rem;
+            color: #f8843c;
+        }
+        .faq-section {
+            background-color: #f9f9f9;
+            padding: 3rem 1rem;
+        }
+        .faq-item {
+            margin-bottom: 2rem;
+        }
+        .faq-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .faq-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        footer a {
+            color: #f8843c;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .benefits, .testimonials, .course-grid, .pricing-table {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Aprenda Violão com Eficiência</h1>
+    <p>Ensino de violão acessível e prático para todas as idades. Vamos tornar o aprendizado divertido e motivador!</p>
+    <button class="cta-button">Adquira Agora com 50% de Desconto</button>
+</header>
+
+<section class="main-content">
+    <div class="mission-section">
+        <h2 class="section-title">Nossa Missão</h2>
+        <p>Nosso projeto nasceu com uma missão clara: ensinar pessoas de todas as idades a aprender violão de forma acessível e prática. Fornecemos materiais pensados para tornar o processo de aprendizagem simples, motivador e divertido. Pretendemos ser uma referência no ensino de violão para iniciantes, ajudando as pessoas a quebrarem o estigma de aprender um instrumento musical.</p>
+    </div>
+
+    <div class="video-section">
+        <h2 class="section-title">Veja Como Funciona</h2>
+        <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="benefits">
+        <div class="benefit">
+            <h3>Fácil de Seguir</h3>
+            <p>Nossos eBooks têm um método prático e direto, para que você aprenda no seu ritmo, sem complicações.</p>
+        </div>
+        <div class="benefit">
+            <h3>Para Todos os Níveis</h3>
+            <p>Quer você esteja começando do zero ou já tenha experiência, nossos materiais se adaptam ao seu nível de habilidade.</p>
+        </div>
+        <div class="benefit">
+            <h3>Suporte Total</h3>
+            <p>Oferecemos suporte dedicado para esclarecer dúvidas e ajudar você em cada etapa do aprendizado.</p>
+        </div>
+    </div>
+
+    <section class="course-section">
+        <h2 class="section-title">Nossos Produtos</h2>
+        <div class="course-grid">
+            <div class="course-item">
+                <img src="https://yourimageurl.com/ebook_iniciantes.jpg" alt="Ebook para Iniciantes">
+                <h3>Ebook para Iniciantes</h3>
+                <p>Ideal para quem quer aprender violão do zero, com um preço super acessível!</p>
+            </div>
+            <div class="course-item">
+                <img src="https://yourimageurl.com/ebook_pestana.jpg" alt="Treinamento de Pestanas">
+                <h3>Pestana em 14 Dias</h3>
+                <p>Domine as pestanas em apenas 14 dias, com um método eficaz e simplificado.</p>
+            </div>
+            <div class="course-item">
+                <img src="https://yourimageurl.com/ebook_teoria_musical.jpg" alt="Ebook de Teoria Musical">
+                <h3>Ebook de Teoria Musical</h3>
+                <p>Conteúdo fácil de entender, ajudando você a compreender teoria musical de maneira prática.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="features">
+        <h2>O Que Você Recebe?</h2>
+        <ul>
+            <li>Acesso imediato a 5 eBooks exclusivos</li>
+            <li>Aulas passo a passo em vídeo</li>
+            <li>Suporte dedicado para tirar dúvidas</li>
+            <li>Certificado de conclusão ao final do curso</li>
+        </ul>
+    </div>
+
+    <section class="pricing-section">
+        <h2 class="section-title">Planos e Preços</h2>
+        <div class="pricing-table">
+            <div class="pricing-option">
+                <h3>Ebook para Iniciantes</h3>
+                <p>Aprenda violão do zero com um método simples e eficaz.</p>
+                <p class="price">R$39,90</p>
+                <button>Compre Agora</button>
+            </div>
+            <div class="pricing-option">
+                <h3>Pestana em 14 Dias</h3>
+                <p>Domine a técnica de pestanas em apenas 2 semanas.</p>
+                <p class="price">R$29,90</p>
+                <button>Compre Agora</button>
+            </div>
+            <div class="pricing-option">
+                <h3>Teoria Musical</h3>
+                <p>Entenda a teoria musical de forma descomplicada.</p>
+                <p class="price">R$49,90</p>
+                <button>Compre Agora</button>
+            </div>
+        </div>
+    </section>
+
+    <h2 class="section-title">Depoimentos de Quem Já Aprendeu</h2>
+    <div class="testimonials">
+        <div class="testimonial">
+            <img src="https://yourimageurl.com/user1.jpg" alt="Aluno satisfeito">
+            <p>"O método é muito fácil de seguir e consegui aprender minhas músicas favoritas em poucas semanas!"</p>
+            <h4>João Silva</h4>
+        </div>
+        <div class="testimonial">
+            <img src="https://yourimageurl.com/user2.jpg" alt="Aluna satisfeita">
+            <p>"Sempre tive dificuldade com violão, mas os eBooks me ajudaram muito a melhorar minha técnica."</p>
+            <h4>Maria Souza</h4>
+        </div>
+        <div class="testimonial">
+            <img src="https://yourimageurl.com/user3.jpg" alt="Aluno satisfeito">
+            <p>"Eu não acreditava que conseguiria aprender tão rápido, mas este método realmente funciona!"</p>
+            <h4>Lucas Oliveira</h4>
+        </div>
+    </div>
+</section>
+
+<section class="faq-section">
+    <h2 class="section-title">Perguntas Frequentes</h2>
+    <div class="faq-item">
+        <h3>O método funciona para quem nunca tocou violão?</h3>
+        <p>Sim! Nossos eBooks são estruturados para iniciantes absolutos, com explicações detalhadas e fáceis de seguir.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Quanto tempo demora para ver resultados?</h3>
+        <p>Com dedicação, você verá progresso significativo em 4 a 8 semanas, dependendo do seu ritmo de estudo.</p>
+    </div>
+    <div class="faq-item">
+        <h3>O que está incluído no pacote de eBooks?</h3>
+        <p>Você receberá um conjunto de eBooks cobrindo desde fundamentos até técnicas avançadas, além de exercícios práticos.</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 SeuNome | Todos os direitos reservados</p>
+    <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Serviço</a></p>
+</footer>
+
+</body>
+</html>
